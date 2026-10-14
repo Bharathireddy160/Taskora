@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Taskora, a student-friendly task and deadline management platform.">
+
+    <meta name="theme-color" content="#247a55">
+
+    <title>About Taskora | Our Story</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* About page enhancements */
+        .team-grid {
+            display: grid;
+            grid-template-columns: minmax(250px, 350px);
+            justify-content: center;
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .team-card {
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 22px;
+            border-radius: 20px;
+            background: #ffffff;
+            border: 1px solid rgba(36, 122, 85, 0.12);
+            box-shadow: 0 10px 30px rgba(25, 75, 48, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(25, 75, 48, 0.15);
+        }
+
+        .team-photo {
+            display: block;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+            background: #e1eee4;
+        }
+
+        .team-card h3 {
+            margin: 20px 12px 8px;
+            font-size: 1.05rem;
+            overflow-wrap: anywhere;
+        }
+
+        .team-card p {
+            margin: 0 12px;
+            color: #587263;
+        }
+
+        .team-role {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 7px 14px;
+            border-radius: 30px;
+            background: #eaf5ed;
+            color: #247a55;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .team-intro {
+            max-width: 620px;
+            margin: 12px auto 0;
+        }
+
+        @media (max-width: 480px) {
+            .team-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .team-photo {
+                height: 260px;
+            }
+
+            .team-card h3 {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container nav">
+
+            <a class="brand" href="index.html" aria-label="Taskora home">
+                <span class="brand-mark">✦</span>
+                <span>task<em>ora</em></span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a class="active" href="about.html" aria-current="page">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a class="btn btn-light" href="login.html">Log in</a>
+                <a class="btn btn-primary" href="signup.html">Get started ↗</a>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero section -->
+        <section class="page-hero">
+            <span class="eyebrow">Our story</span>
+
+            <h1>
+                A calmer way to
+                <span style="color: var(--green);">get it done.</span>
+            </h1>
+
+            <p>
+                Taskora is built around one simple idea: students should spend
+                more energy learning and less energy worrying about what they
+                might forget.
+            </p>
+        </section>
+
+        <!-- About section -->
+        <section class="section">
+            <div class="container about-grid">
+
+                <div>
+                    <span class="eyebrow">Why Taskora?</span>
+
+                    <h2>Made for the real rhythm of student life.</h2>
+
+                    <p>
+                        Lectures move quickly. Deadlines pile up. Exam dates
+                        arrive sooner than expected. Taskora gives you one home
+                        for all those moving pieces, with clear priorities and
+                        visible progress.
+                    </p>
+
+                    <p>
+                        Whether you're tracking a lab submission, a chapter to
+                        read, or a personal goal, your plan stays organized and
+                        easy to update.
+                    </p>
+
+                    <a class="btn btn-primary" href="signup.html">
+                        Plan your first week ↗
+                    </a>
+                </div>
+
+                <div class="about-visual" aria-label="Illustration of study books">
+                    📚
+
+                    <span style="position: absolute; right: 12%; top: 14%; font-size: 2.3rem;">
+                        ✦
+                    </span>
+
+                    <span style="position: absolute; left: 14%; bottom: 13%; font-size: 2rem;">
+                        ✓
+                    </span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Values section -->
+        <section class="section" style="background: #eef7ef;">
+            <div class="container">
+
+                <div class="section-head">
+                    <span class="eyebrow">What matters to us</span>
+                    <h2>Progress over pressure.</h2>
+                </div>
+
+                <div class="values-grid">
+
+                    <article class="value-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Clarity</h3>
+                        <p>
+                            Turn a busy mind into a simple, actionable list.
+                        </p>
+                    </article>
+
+                    <article class="value-card">
+                        <div class="feature-icon">🌱</div>
+                        <h3>Consistency</h3>
+                        <p>
+                            Small daily wins are worth celebrating.
+                        </p>
+                    </article>
+
+                    <article class="value-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Your space</h3>
+                        <p>
+                            Your tasks are private to your signed-in account,
+                            protected by correctly configured Firebase rules.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer profile section -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section-head">
+                    <span class="eyebrow">The person behind the idea</span>
+
+                    <h2>Built with student life in mind.</h2>
+
+                    <p class="team-intro">
+                        Meet the creator of Taskora, a student-focused platform
+                        designed to make organizing tasks, managing deadlines,
+                        and tracking progress easier.
+                    </p>
+                </div>
+
+                <div class="team-grid">
+
+                    <article class="team-card">
+
+                        <img
+                            class="team-photo"
+                            src="assets/images/image1.jpeg"
+                            alt="Portrait of Bharathi Reddy Kummetha"
+                            loading="lazy"
+                        >
+
+                        <h3>BHARATHI REDDY KUMMETHA</h3>
+
+                        <p>
+                            Creator of Taskora
+                        </p>
+
+                        <span class="team-role">
+                            Founder &amp; Frontend Developer
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-top">
+
+                <div>
+                    <a class="brand" href="index.html" aria-label="Taskora home">
+                        <span class="brand-mark">✦</span>
+                        <span>task<em>ora</em></span>
+                    </a>
+
+                    <p>
+                        Plan Smart. Achieve More.<br>
+                        One deadline at a time.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="login.html">Log in</a>
+                    <a href="signup.html">Sign up</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 Taskora. Built for student life.</span>
+                <span>Small steps. Big progress. ✦</span>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

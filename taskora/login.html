@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eff6ff">
+  <meta name="description" content="Log in to Taskora and manage your student tasks and deadlines.">
+
+  <title>Log in | Taskora</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">✦</span>
+        <span>task<em>ora</em></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-light" href="login.html">Log in</a>
+        <a class="btn btn-primary" href="signup.html">Get started ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-card">
+      <div class="auth-logo">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">✦</span>
+          <span>task<em>ora</em></span>
+        </a>
+      </div>
+
+      <span class="eyebrow">Welcome back</span>
+
+      <h1>Pick up where you left off.</h1>
+      <p>Your next win is waiting. Log in to see your plan.</p>
+
+      <form id="login-form">
+        <div class="field">
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="username"
+            placeholder="you@college.edu"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Your password"
+            required
+          >
+        </div>
+
+        <div style="text-align: right; margin: 0 0 16px;">
+          <button
+            type="button"
+            id="forgot-password-button"
+            style="border:0;background:none;color:#2563eb;cursor:pointer;font:inherit;font-size:14px;"
+          >
+            Forgot password?
+          </button>
+        </div>
+
+        <button
+          class="btn btn-primary"
+          id="login-submit"
+          type="submit"
+        >
+          Log in ↗
+        </button>
+
+        <p
+          id="form-message"
+          class="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </form>
+
+      <div class="divider">or continue with</div>
+
+      <button
+        class="btn btn-light"
+        id="google-login-button"
+        type="button"
+        data-google-login
+      >
+        🌐 Continue with Google
+      </button>
+
+      <p class="auth-bottom">
+        New to Taskora?
+        <a
+          href="signup.html"
+          style="color:var(--green);font-weight:700"
+        >
+          Create an account
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand-mark">✦</span>
+            <span>task<em>ora</em></span>
+          </a>
+          <p>Plan Smart. Achieve More.<br>One deadline at a time.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html">Log in</a>
+          <a href="signup.html">Sign up</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Taskora. Built for student life.</span>
+        <span>Small steps. Big progress. ✦</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="assets/js/auth.js"></script>
+</body>
+</html>
