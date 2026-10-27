@@ -88,3 +88,96 @@ onAuthStateChanged(auth, (user) => {
     location.href = "dashboard.html";
   }
 });
+
+import {
+  sendPasswordResetEmail
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+// Show / Hide Password
+const passwordInput = document.getElementById("password");
+const togglePasswordButton =
+  document.getElementById("toggle-password");
+
+if (passwordInput && togglePasswordButton) {
+  togglePasswordButton.addEventListener("click", () => {
+    const isPasswordHidden = passwordInput.type === "password";
+
+    passwordInput.type = isPasswordHidden ? "text" : "password";
+    togglePasswordButton.textContent =
+      isPasswordHidden ? "Hide" : "Show";
+
+    togglePasswordButton.setAttribute(
+      "aria-label",
+      isPasswordHidden ? "Hide password" : "Show password"
+    );
+
+    togglePasswordButton.setAttribute(
+      "aria-pressed",
+      String(isPasswordHidden)
+    );
+  });
+}
+
+// Forgot Password
+const forgotPasswordButton =
+  document.getElementById("forgot-password-button");
+
+const emailInput = document.getElementById("email");
+const formMessage = document.getElementById("form-message");
+
+if (forgotPasswordButton && emailInput && formMessage) {
+  forgotPasswordButton.addEventListener("click", async () => {
+    const email = emailInput.value.trim();
+
+    if (!email) {
+      formMessage.textContent =
+        "Please enter your email address first.";
+      formMessage.style.color = "#dc2626";
+      emailInput.focus();
+      return;
+    }
+
+    if (!emailInput.checkValidity()) {
+      formMessage.textContent =
+        "Please enter a valid email address.";
+      formMessage.style.color = "#dc2626";
+      emailInput.focus();
+      return;
+    }
+
+    forgotPasswordButton.disabled = true;
+    forgotPasswordButton.textContent = "Sending...";
+    formMessage.textContent = "";
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+
+      formMessage.textContent =
+        "If an account exists for this email, a password reset link will be sent. Please check your inbox and spam folder.";
+      formMessage.style.color = "#15803d";
+    } catch (error) {
+      console.error("Password reset error:", error);
+
+      if (
+        error.code === "auth/invalid-email" ||
+        error.code === "auth/missing-email"
+      ) {
+        formMessage.textContent =
+          "Please enter a valid email address.";
+      } else if (
+        error.code === "auth/too-many-requests"
+      ) {
+        formMessage.textContent =
+          "Too many attempts. Please try again later.";
+      } else {
+        formMessage.textContent =
+          "Unable to send the reset email. Please try again later.";
+      }
+
+      formMessage.style.color = "#dc2626";
+    } finally {
+      forgotPasswordButton.disabled = false;
+      forgotPasswordButton.textContent = "Forgot password?";
+    }
+  });
+}

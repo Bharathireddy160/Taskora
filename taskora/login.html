@@ -67,17 +67,33 @@
           >
         </div>
 
-        <div class="field">
-          <label for="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            autocomplete="current-password"
-            placeholder="Your password"
-            required
-          >
-        </div>
+        
+<div class="field">
+  <label for="password">Password</label>
+
+  <div class="password-wrapper">
+    <input
+      id="password"
+      name="password"
+      type="password"
+      autocomplete="current-password"
+      placeholder="Your password"
+      required
+      style="padding-right: 75px;"
+    >
+
+    <button
+      type="button"
+      id="toggle-password"
+      class="password-toggle"
+      aria-label="Show password"
+      aria-pressed="false"
+    >
+      Show
+    </button>
+  </div>
+</div>
+
 
         <div style="text-align: right; margin: 0 0 16px;">
           <button
