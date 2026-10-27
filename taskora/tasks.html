@@ -1,5 +1,15 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My tasks · Taskora</title><link rel="stylesheet" href="assets/css/style.css"></head><body data-protected="true"><header class="site-header"><div class="container nav">
-<a class="brand" href="index.html"><span class="brand-mark">✦</span><span>task<em>ora</em></span></a>
+
+<a class="brand footer-brand" href="index.html"
+   aria-label="Taskora Home">
+    <img
+        class="brand-logo"
+        src="assets/images/taskora-logo.png"
+        alt="Taskora"
+    >
+</a>
+
+
 <nav class="nav-links" aria-label="Main navigation"><a class="" href="index.html">Home</a><a class="" href="about.html">About</a><a class="" href="contact.html">Contact</a></nav>
 <div class="nav-actions"><a class="btn btn-light" href="login.html">Log in</a><a class="btn btn-primary" href="signup.html">Get started ↗</a></div>
 </div></header><main class="dashboard-wrap"><div class="container"><div class="dashboard-heading"><div><span class="eyebrow">Your to-do universe</span><h1>My <span style="color:var(--green)">tasks.</span></h1><p style="margin:0">Check deadlines, finish work, and watch your progress turn green.</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="dashboard.html">＋ Add a task</a><button class="btn btn-light" id="logout-button">Log out</button></div></div><div id="task-alert" class="reminder-banner" hidden></div><section class="panel-card"><div class="panel-heading"><div><h2>Everything on your plate</h2><p id="tasks-user" style="margin:5px 0 0;font-size:.9rem"></p></div><span id="task-count" class="muted"></span></div><div class="task-toolbar" style="margin-bottom:22px"><select class="filter-select" id="filter-status" aria-label="Filter by completion"><option value="all">All tasks</option><option value="open">In progress</option><option value="done">Completed</option></select><select class="filter-select" id="filter-category" aria-label="Filter by category"><option value="all">All categories</option><option>Assignment</option><option>Exam</option><option>Reading</option><option>Personal</option></select></div><div id="all-tasks"><div class="empty-state">Loading tasks…</div></div></section></div></main><footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="index.html"><span class="brand-mark">✦</span><span>task<em>ora</em></span></a><p>Plan Smart. Achieve More.<br>One deadline at a time.</p></div><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="login.html">Log in</a><a href="signup.html">Sign up</a></div></div><div class="footer-bottom"><span>© 2026 Taskora. Built for student life.</span><span>Small steps. Big progress. ✦</span></div></div></footer><script type="module" src="assets/js/auth.js"></script><script type="module" src="assets/js/tasks.js"></script></body></html>

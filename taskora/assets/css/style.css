@@ -33,3 +33,325 @@
 .team-card p {
   padding: 0 12px;
 }
+
+/* ================================
+   TASKORA LOGO
+================================ */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    display: block;
+    width: 155px;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.footer-brand .brand-logo {
+    width: 155px;
+}
+
+/* ================================
+   TASKORA SPLASH SCREEN
+================================ */
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            #e0f5e5 0,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            #d8efdf 0,
+            transparent 35%
+        ),
+        #ffffff;
+    opacity: 1;
+    visibility: visible;
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.splash-screen.splash-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.splash-content {
+    width: min(100%, 440px);
+    text-align: center;
+    animation: splashEntrance 0.9s ease both;
+}
+
+.splash-logo {
+    display: block;
+    width: min(100%, 360px);
+    height: auto;
+    margin: 0 auto 12px;
+    mix-blend-mode: multiply;
+    animation: logoFloat 2.5s ease-in-out infinite;
+}
+
+.splash-title {
+    margin: 12px 0 8px;
+    font-size: clamp(1.7rem, 5vw, 2.5rem);
+    font-weight: 800;
+    color: #123d22;
+    letter-spacing: -0.05em;
+    animation: titleReveal 0.9s ease both;
+}
+
+.splash-title span {
+    color: #247a55;
+}
+
+.splash-subtitle {
+    margin: 0 0 28px;
+    font-size: 1rem;
+    color: #687971;
+}
+
+.splash-tasks {
+    width: min(100%, 340px);
+    margin: 0 auto;
+    text-align: left;
+}
+
+.splash-task {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 12px 0;
+    padding: 13px 15px;
+    border: 1px solid #e2ebe5;
+    border-radius: 13px;
+    background: #ffffffd9;
+    box-shadow: 0 5px 18px #153f2b08;
+    color: #687971;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: taskAppear 0.5s ease forwards;
+}
+
+.splash-task:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.splash-task:nth-child(2) {
+    animation-delay: 1.15s;
+}
+
+.splash-task:nth-child(3) {
+    animation-delay: 1.8s;
+}
+
+.splash-checkbox {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    border: 2px solid #b9c9bd;
+    border-radius: 8px;
+    background: #ffffff;
+    color: transparent;
+    font-weight: 800;
+    transform: scale(0.8);
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.splash-task.is-checked {
+    background: #edf8ef;
+    border-color: #b9e4c5;
+    color: #247a55;
+}
+
+.splash-task.is-checked .splash-checkbox {
+    background: #247a55;
+    border-color: #247a55;
+    color: white;
+    transform: scale(1);
+}
+
+.splash-task.is-checked > span:last-child {
+    text-decoration: line-through;
+}
+
+.splash-progress {
+    width: min(100%, 340px);
+    height: 6px;
+    margin: 25px auto 12px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e8f0e9;
+}
+
+.splash-progress span {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #247a55, #78cc91);
+    animation: progressFill 3.2s linear forwards;
+}
+
+.splash-loading {
+    font-size: 0.85rem;
+    color: #687971;
+    animation: loadingPulse 1.2s ease-in-out infinite;
+}
+
+/* ================================
+   ANIMATION KEYFRAMES
+================================ */
+@keyframes splashEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes taskAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progressFill {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes loadingPulse {
+    0%, 100% {
+        opacity: 0.55;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 650px) {
+    .brand-logo {
+        width: 125px;
+    }
+
+    .splash-logo {
+        width: min(100%, 300px);
+    }
+
+    .splash-content {
+        max-width: 360px;
+    }
+
+    .splash-task {
+        padding: 11px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+    .splash-content,
+    .splash-logo,
+    .splash-title,
+    .splash-task,
+    .splash-loading,
+    .splash-progress span {
+        animation: none;
+    }
+
+    .splash-task {
+        opacity: 1;
+        transform: none;
+    }
+
+    .splash-progress span {
+        width: 100%;
+    }
+}
+
+/* Taskora brand logo */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #172b22;
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.brand-mark svg {
+    display: block;
+    width: 38px;
+    height: 38px;
+    transition: transform 0.3s ease;
+}
+
+.brand:hover .brand-mark svg {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.brand em {
+    color: #247a55;
+    font-style: normal;
+}
+
