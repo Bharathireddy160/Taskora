@@ -625,4 +625,126 @@ body {
     }
 }
 
+/* =====================================
+   TASKORA TASK CARDS - MOBILE FIX
+===================================== */
+
+#all-tasks {
+    width: 100%;
+    min-width: 0;
+}
+
+.task-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    min-width: 0;
+    padding: 18px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+}
+
+.complete-toggle {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.task-card-content {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+}
+
+.task-card-content h3 {
+    margin: 0 0 7px;
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
+.task-card-content p {
+    margin: 4px 0;
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
+.task-note {
+    margin-top: 8px !important;
+}
+
+.status-pill {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.delete-task {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+
+    .task-card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .complete-toggle {
+        margin-top: 3px;
+    }
+
+    .task-card-content {
+        flex: 1 1 calc(100% - 45px);
+        min-width: 0;
+    }
+
+    .task-card-content h3 {
+        font-size: 15px;
+    }
+
+    .task-card-content p {
+        font-size: 12px;
+    }
+
+    .status-pill {
+        margin-left: 34px;
+        font-size: 11px;
+    }
+
+    .delete-task {
+        margin-left: auto;
+        font-size: 12px;
+    }
+}
+
+/* Very small mobile */
+@media (max-width: 360px) {
+
+    .task-card {
+        padding: 11px;
+        gap: 8px;
+    }
+
+    .task-card-content h3 {
+        font-size: 14px;
+    }
+
+    .status-pill {
+        margin-left: 32px;
+    }
+}
+
 
