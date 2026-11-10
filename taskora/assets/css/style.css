@@ -390,3 +390,239 @@
   border-radius: 4px;
 }
 
+/* =====================================
+   TASKORA MOBILE RESPONSIVE FIX
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+/* Main container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Header */
+.site-header {
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Dashboard */
+.dashboard-wrap {
+    width: 100%;
+    min-width: 0;
+}
+
+.dashboard-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dashboard-heading > div {
+    min-width: 0;
+}
+
+.dashboard-heading h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.2;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.dashboard-heading p {
+    max-width: 100%;
+    line-height: 1.6;
+    white-space: normal;
+}
+
+/* Panel */
+.panel-card {
+    width: 100%;
+    min-width: 0;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.panel-heading h2 {
+    font-size: clamp(1.2rem, 4vw, 1.7rem);
+    line-height: 1.4;
+}
+
+/* Filters */
+.task-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-select {
+    min-width: 140px;
+    max-width: 100%;
+}
+
+/* Task content */
+#all-tasks {
+    width: 100%;
+    min-width: 0;
+}
+
+#all-tasks * {
+    max-width: 100%;
+}
+
+/* Footer */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .nav-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .dashboard-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-heading h1 {
+        font-size: 36px;
+    }
+
+    .dashboard-heading p {
+        font-size: 14px;
+    }
+
+    .panel-heading {
+        align-items: flex-start;
+    }
+
+    .task-toolbar {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .filter-select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        gap: 12px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        font-size: 13px;
+    }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 400px) {
+
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .dashboard-heading h1 {
+        font-size: 30px;
+    }
+
+    .panel-heading h2 {
+        font-size: 19px;
+    }
+
+    .nav-actions .btn {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+}
+
+
